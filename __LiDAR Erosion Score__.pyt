@@ -965,7 +965,7 @@ class conditionTheLidarDem(object):
 		param0 = arcpy.Parameter(
 			displayName="Culverts",
 			name="culverts",
-			datatype="GPFeatureLayer",
+			datatype="Feature Layer",
 			parameterType="Required",
 			direction="Input")
 		param0.filter.list = ["Polyline"]
@@ -973,7 +973,7 @@ class conditionTheLidarDem(object):
 		param1 = arcpy.Parameter(
 			displayName="Watershed area (unbuffered)",
 			name="watershed_area",
-			datatype="GPFeatureLayer",
+			datatype="Feature Layer",
 			parameterType="Required",
 			direction="Input")
 		param1.filter.list = ["Polygon"]
@@ -981,21 +981,21 @@ class conditionTheLidarDem(object):
 		param2 = arcpy.Parameter(
 			displayName="Raw LiDAR DEM",
 			name="raw_lidar_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param3 = arcpy.Parameter(
 			displayName="Output conditioned DEM",
 			name="output_conditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
 		param4 = arcpy.Parameter(
 			displayName="Output optimized fill",
 			name="output_optimized_fill",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1040,7 +1040,7 @@ class downloadPrecipitationData(object):
 		param0 = arcpy.Parameter(
 		displayName= "Download frequency-duration data? If yes, define freqency and duration below.",
 		name="download_frequency_duration",
-		datatype="GPBoolean",
+		datatype="Boolean",
 		parameterType="Required",
 		direction="Input")
 		param0.value = 1
@@ -1048,7 +1048,7 @@ class downloadPrecipitationData(object):
 		param1 = arcpy.Parameter(
 			displayName="Frequency (years)",
 			name="frequency",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Optional",
 			direction="Input")
 		param1.filter.type = "ValueList"
@@ -1057,7 +1057,7 @@ class downloadPrecipitationData(object):
 		param2 = arcpy.Parameter(
 			displayName="Duration (hours)",
 			name="duration",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Optional",
 			direction="Input")
 		param2.filter.type = "ValueList"
@@ -1066,7 +1066,7 @@ class downloadPrecipitationData(object):
 		param3 = arcpy.Parameter(
 			displayName="Locally stored frequency-duration data (zip file)",
 			name="local_frequency_duration",
-			datatype="DEFile",
+			datatype="File",
 			parameterType="Optional",
 			direction="Input")
 		param3.filter.list = ["zip"]
@@ -1074,14 +1074,14 @@ class downloadPrecipitationData(object):
 		param4 = arcpy.Parameter(
 			displayName="Raster template",
 			name="raster_template",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param5 = arcpy.Parameter(
 			displayName="Output precipitation frequency-duration raster",
 			name="output_precipitation_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1136,7 +1136,7 @@ class createCurveNumberRaster(object):
 		param0 = arcpy.Parameter(
 			displayName="Download Cropland Data Layers? If yes, define years below. If no, define locally stored layers",
 			name="download_cropland_data_layers",
-			datatype="GPBoolean",
+			datatype="Boolean",
 			parameterType="Required",
 			direction="Input")
 		param0.value = 1
@@ -1144,7 +1144,7 @@ class createCurveNumberRaster(object):
 		param1 = arcpy.Parameter(
 			displayName="Start year (2008 is recommended)",
 			name="start_year",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Optional",
 			direction="Input")
 		param1.filter.type = "ValueList"
@@ -1154,7 +1154,7 @@ class createCurveNumberRaster(object):
 		param2 = arcpy.Parameter(
 			displayName="End year (2012 is recommended)",
 			name="end_year",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Optional",
 			direction="Input")
 		param2.filter.type = "ValueList"
@@ -1164,7 +1164,7 @@ class createCurveNumberRaster(object):
 		param3 = arcpy.Parameter(
 			displayName="Use locally stored Cropland Data Layers?",
 			name="use_locally_stored_cropland_data_layers",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Optional",
 			direction="Input",
 			multiValue=True)
@@ -1172,7 +1172,7 @@ class createCurveNumberRaster(object):
 		param4 = arcpy.Parameter(
 			displayName="gSSURGO geodatabase",
 			name="gssurgo_geodatabase",
-			datatype="DEWorkspace",
+			datatype="Workspace",
 			parameterType="Required",
 			direction="Input")
 		param4.filter.list = ["Local Database"]
@@ -1180,7 +1180,7 @@ class createCurveNumberRaster(object):
 		param5 = arcpy.Parameter(
 			displayName="Watershed area (buffered)",
 			name="watershed_area",
-			datatype="GPFeatureLayer",
+			datatype="Feature Layer",
 			parameterType="Required",
 			direction="Input")
 		param5.filter.list = ["Polygon"]
@@ -1188,21 +1188,21 @@ class createCurveNumberRaster(object):
 		param6 = arcpy.Parameter(
 			displayName="Raster template",
 			name="raster_template",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param7 = arcpy.Parameter(
 			displayName="Output curve number raster (high estimate)",
 			name="output_curve_number_high",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
 		param8 = arcpy.Parameter(
 			displayName="Output curve number raster (low estimate)",
 			name="output_curve_number_low",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1260,35 +1260,35 @@ class internallyDrainingAreas(object):
 		param0 = arcpy.Parameter(
 			displayName="Conditioned DEM",
 			name="conditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param1 = arcpy.Parameter(
 			displayName="Optimized fill raster",
 			name="optimized_fill_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param2 = arcpy.Parameter(
 			displayName="Precipitation frequency-duration raster",
 			name="precipitation_frequency_duration_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param3 = arcpy.Parameter(
 			displayName="Curve number raster",
 			name="curve_number_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 			
 		param4 = arcpy.Parameter(
 			displayName="Watershed area (buffered)",
 			name="watershed_area",
-			datatype="GPFeatureLayer",
+			datatype="Feature Layer",
 			parameterType="Required",
 			direction="Input")
 		param4.filter.list = ["Polygon"]
@@ -1296,14 +1296,14 @@ class internallyDrainingAreas(object):
 		param5 = arcpy.Parameter(
 			displayName="Output internally draining areas",
 			name="internally_draining_areas",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
 		param6 = arcpy.Parameter(
 			displayName="Output DEM excluding internally draining areas",
 			name="dem_excluding_internally_draining_areas",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1352,28 +1352,28 @@ class demReconditioning(object):
 		param0 = arcpy.Parameter(
 			displayName="DEM excluding internally draining areas",
 			name="dem_excluding_internally_draining_areas",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param1 = arcpy.Parameter(
 			displayName="Internally draining areas raster",
 			name="internally_draining_areas",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param2 = arcpy.Parameter(
 			displayName='Additional "non-contributing" areas raster (e.g., grass waterways)',
 			name="additional_non_contributing_areas",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Optional",
 			direction="Input")
 
 		param3 = arcpy.Parameter(
 			displayName="Output Reconditioned DEM excluding internally draining areas",
 			name="reconditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1419,21 +1419,21 @@ class calculateStreamPowerIndex(object):
 		param0 = arcpy.Parameter(
 			displayName="Conditioned DEM",
 			name="conditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param1 = arcpy.Parameter(
 			displayName="Reconditioned DEM excluding non-contributing areas",
 			name="reconditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param2 = arcpy.Parameter(
 			displayName='Flow accumulation threshold (for a 3-meter resolution grid)',
 			name="flow_accumulation_threshold",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Required",
 			direction="Input")
 		param2.value = '50000'
@@ -1441,7 +1441,7 @@ class calculateStreamPowerIndex(object):
 		param3 = arcpy.Parameter(
 			displayName="Output stream power index raster",
 			name="stream_power_index_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1486,7 +1486,7 @@ class rasterizeKfactorForUsle(object):
 		param0 = arcpy.Parameter(
 			displayName="gSSURGO geodatabase",
 			name="gssurgo_geodatabase",
-			datatype="DEWorkspace",
+			datatype="Workspace",
 			parameterType="Required",
 			direction="Input")
 		param0.filter.list = ["Local Database"]
@@ -1494,7 +1494,7 @@ class rasterizeKfactorForUsle(object):
 		param1 = arcpy.Parameter(
 			displayName="K-factor field",
 			name="k_factor_field",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Required",
 			direction="Input")
 		param1.value = 'kwfact'
@@ -1502,14 +1502,14 @@ class rasterizeKfactorForUsle(object):
 		param2 = arcpy.Parameter(
 			displayName='Conditioned DEM (raster grid template)',
 			name="conditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param3 = arcpy.Parameter(
 			displayName="Watershed area (buffered)",
 			name="watershed_area",
-			datatype="GPFeatureLayer",
+			datatype="Feature Layer",
 			parameterType="Required",
 			direction="Input")
 		param3.filter.list = ["Polygon"]
@@ -1517,7 +1517,7 @@ class rasterizeKfactorForUsle(object):
 		param4 = arcpy.Parameter(
 			displayName="Output K-factor raster",
 			name="k_factor_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1563,7 +1563,7 @@ class rasterizeCfactorForUsle(object):
 		param0 = arcpy.Parameter(
 			displayName="Download Cropland Data Layers? If yes, define years below. If no, define locally stored layers",
 			name="download_cropland_data_layers",
-			datatype="GPBoolean",
+			datatype="Boolean",
 			parameterType="Required",
 			direction="Input")
 		param0.value = 1
@@ -1571,7 +1571,7 @@ class rasterizeCfactorForUsle(object):
 		param1 = arcpy.Parameter(
 			displayName="Start year (2008 is recommended)",
 			name="start_year",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Optional",
 			direction="Input")
 		param1.filter.type = "ValueList"
@@ -1581,7 +1581,7 @@ class rasterizeCfactorForUsle(object):
 		param2 = arcpy.Parameter(
 			displayName="End year (2012 is recommended)",
 			name="end_year",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Optional",
 			direction="Input")
 		param2.filter.type = "ValueList"
@@ -1591,7 +1591,7 @@ class rasterizeCfactorForUsle(object):
 		param3 = arcpy.Parameter(
 			displayName="Use locally stored Cropland Data Layers?",
 			name="use_locally_stored_cropland_data_layers",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Optional",
 			direction="Input",
 			multiValue=True)
@@ -1600,7 +1600,7 @@ class rasterizeCfactorForUsle(object):
 		param4 = arcpy.Parameter(
 			displayName="Watershed area (buffered)",
 			name="watershed_area",
-			datatype="GPFeatureLayer",
+			datatype="Feature Layer",
 			parameterType="Required",
 			direction="Input")
 		param4.filter.list = ["Polygon"]
@@ -1608,14 +1608,14 @@ class rasterizeCfactorForUsle(object):
 		param5 = arcpy.Parameter(
 			displayName="Raster template",
 			name="raster_template",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param6 = arcpy.Parameter(
 			displayName="Output crop rotation raster",
 			name="crop_rotation_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 		param6.symbology = rotationSymbologyFile
@@ -1623,14 +1623,14 @@ class rasterizeCfactorForUsle(object):
 		param7 = arcpy.Parameter(
 			displayName="Output C-factor raster (high estimate)",
 			name="output_c_factor_high",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
 		param8 = arcpy.Parameter(
 			displayName="Output C-factor raster (low estimate)",
 			name="output_c_factor_low",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1678,6 +1678,11 @@ class rasterizeCfactorForUsle(object):
 		calculateCFactor(downloadBool, localCdlList, watershedFile, rasterTemplateFile, yrStart, \
 			yrEnd, outRotation, outHigh, outLow, legendFile, cFactorXwalkFile, tempDir, tempGdb)
 
+		mxd = arcpy.mapping.MapDocument("CURRENT")
+		df = arcpy.mapping.ListDataFrames(mxd)[0]
+		addLayer = arcpy.mapping.Layer(outRotation)
+		arcpy.mapping.AddLayer(df, addLayer, "AUTO_ARRANGE")
+
 class calculateSoilLossUsingUsle(object):
 	def __init__(self):
 		"""Define the tool (tool name is the name of the class)."""
@@ -1689,49 +1694,49 @@ class calculateSoilLossUsingUsle(object):
 		param0 = arcpy.Parameter(
 			displayName="Conditioned DEM",
 			name="conditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param1 = arcpy.Parameter(
 			displayName="Reconditioned DEM excluding non-contributing areas",
 			name="reconditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param2 = arcpy.Parameter(
 			displayName="Erosivity raster (SI units)",
 			name="erosivity_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Optional",
 			direction="Input")
 
 		param3 = arcpy.Parameter(
 			displayName="Erosivity constant",
 			name="erosivity_constant",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Optional",
 			direction="Input")
 
 		param4 = arcpy.Parameter(
 			displayName="K-factor raster",
 			name="k_factor_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param5 = arcpy.Parameter(
 			displayName="C-factor raster",
 			name="c_factor_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Optional",
 			direction="Input")
 
 		param6 = arcpy.Parameter(
 			displayName="Flow Accumulation threshold (for a 10-meter resolution grid)",
 			name="flow_accumulation_threshold",
-			datatype="GPString",
+			datatype="String",
 			parameterType="Required",
 			direction="Input")
 		param6.value = '1000'
@@ -1739,7 +1744,7 @@ class calculateSoilLossUsingUsle(object):
 		param7 = arcpy.Parameter(
 			displayName="Output soil loss raster",
 			name="soil_loss_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Output")
 
@@ -1796,21 +1801,21 @@ class erosionScore(object):
 		param0 = arcpy.Parameter(
 			displayName="Soil loss raster",
 			name="soil_loss_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param1 = arcpy.Parameter(
 			displayName="Stream power index raster",
 			name="stream_power_index_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param2 = arcpy.Parameter(
 			displayName="Zonal statistic boundary feature class",
 			name="zonal_boundary",
-			datatype="GPFeatureLayer",
+			datatype="Feature Layer",
 			parameterType="Optional",
 			direction="Input")
 		param2.filter.list = ["Polygon"]
@@ -1826,21 +1831,21 @@ class erosionScore(object):
 		param4 = arcpy.Parameter(
 			displayName="Conditioned DEM (for raster template)",
 			name="conditioned_dem",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Required",
 			direction="Input")
 
 		param5 = arcpy.Parameter(
 			displayName="Output erosion score raster",
 			name="erosion_score_raster",
-			datatype="GPRasterLayer",
+			datatype="Raster Layer",
 			parameterType="Optional",
 			direction="Output")
 
 		param6 = arcpy.Parameter(
 			displayName="Output summary table",
 			name="output_summary_table",
-			datatype="DETable",
+			datatype="Table",
 			parameterType="Optional",
 			direction="Output")
 
